@@ -94,6 +94,7 @@ table {
 	background-color: #00FF00;
 }
 .item__img{
+	border-radius: 10px;
 	max-width: 100%;
 }
 .item__name{
