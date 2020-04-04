@@ -59,7 +59,10 @@ table {
     	grid-template-columns: repeat(3, minmax(384px, 1fr));
 	}
 }
-
+.wrapper{
+	width: 1200px;
+	margin: 0 auto;
+}
 .item{
 	display: grid;
 	grid-template-columns: minmax(0, 100px) minmax(0, 568px);
