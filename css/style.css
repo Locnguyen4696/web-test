@@ -46,6 +46,10 @@ table {
 	border-spacing: 0;
 }
 @media (min-width: 768px){
+	.wrapper{
+	width: 100%;
+	margin: 0 auto;
+	}
 	.content{
 		display: grid;
     	grid-gap: 5px;
@@ -53,16 +57,18 @@ table {
 	}
 }
 @media (min-width: 1200px){
+	.wrapper{
+	width: 1200px;
+	margin: 0 auto;
+	}
 	.content{
 		display: grid;
     	grid-gap: 5px;
     	grid-template-columns: repeat(3, 1fr);
 	}
+
 }
-.wrapper{
-	width: 100%;
-	margin: 0 auto;
-}
+
 .item{
 	display: grid;
 	grid-template-columns: minmax(0, 20%) minmax(0, 80%);
