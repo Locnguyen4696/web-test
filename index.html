@@ -8,21 +8,41 @@
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
+		
+		var request = new XMLHttpRequest(); 
+		request.open('GET', 'https://5e85b87c44467600161c669f.mockapi.io/api/teachers?fbclid=IwAR1D5EWSeL7L8CPQZNAa9xaqVsmjOVMlVRlgms3ySIcB7z6fI-dfmuUHBiQ', true); 
+		request.onload = function () {
+			var data = JSON.parse(this.response);
+			for(i=0;i<data.length;i++){
+				let count=data[i].nbCourses;
+				let des=data[i].description;
+				let name=data[i].name;
+				let img=data[i].avatar
+				if (data[i].online==false){
+					var online="red";
+				}else{
+					var online="#00FF00";
+				}
+				$($('.item__records')[i]).text(count)
+				$($('.item__descriptions')[i]).text(des)
+				$($('.item__name span')[i]).text(name)
+				$($('.item__img')[i]).attr("src",img)
+				$($('.item__status--online')[i]).css("background-color",online)
 
-			$.getJSON("http://localhost/test.json", function(data) {
-				
-					$(".item__descriptions").text(data[i].introduction);
-					$(".item__name span").text(data[i].firstName+data[i].lastName);
-					$(".item__img").attr("src",data[i].avatar);
-					if (data[i].online==false){
-						$(".item__status--online").css("background-color","red");
-					}else{
-						$(".item__status--online").css("background-color","green");
-					}
-					
-			});
-});
+			}
+				// $(".item__descriptions").text(data[i].description);
+				// $(".item__name span").text(data[i].name);
+				// $(".item__img").attr("src",data[i].avatar);
+				// if (data[i].online==false){
+				// 	$(".item__status--online").css("background-color","red");
+				// }else{
+				// 	$(".item__status--online").css("background-color","green");
+				// }
+		
+		};
+
+		request.send();	
+	
 		</script>
 
 					
@@ -32,139 +52,127 @@
 		<div class="wrapper">
 			<div class="content">
 				<div class="item">
-					<img class="item__img" src="css/img/gv1.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Nguyễn Hồng Hạnh</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Chào các bạn, mình là Hạnh. Mình là sinh viên đã tốt nghiệp khoa ngôn ngữ Tây Ban Nha, đại học Hà Nội với điểm số đầu ra là 8.2, nằm trong top 4 những sinh viên đã tốt nghiệp của khoa năm đó. Trong thời gian theo học tại trường, mình đã dành được học bổng Erasmus+ và có cơ hội đi trao đổi sinh viên ở Tây Ban Nha trong thời gian một học kì. Đây thực sự là một cơ hội rất quý báu đối với mình, nhờ có thời gian này, mình đã phát triển thêm được rất nhiều khả năng ngôn ngữ, cũng như kiến thức liên quan đến văn hóa, xã hội về đất nước Tây Âu này.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv2.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Đặng Duyên</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Em là sinh viên khoa Kinh doanh quốc tế Học viện Ngân hàng. Lớp 11 và kì 1 lớp 12 em dạy gia sư cho học sinh lớp 9. 2 năm liền đạt giải nhất Sử cấp huyện và được tham gia thi thành phố. Hồi lớp 5 đạt giải nhất thi viết chữ đẹp cấp huyện và được tham gia thi thành phố. Điểm thi đại học của em là 24, môn toán được 8.6. Học kì 1 năm nhất đại học đi dạy cho gia sư cho bé trai lớp 1 trường Vinschool, em bé có điểm thi cuối Toán, Tiếng Việt, Tiếng Anh lần lượt là 10,10,10. Em thật sự rất thích trẻ con. Em thường dạy các bé theo phương pháp lồng tất cả bài học vào trong trò chơi, cả cô và trò đều tham gia gia vào trò chơi đóc giúp học sinh thấy hứng thú hơn với mỗi bài học.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv3.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Trần Thị Kim Tuyến</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							sinh viên học viện ngoại giao chuyên ngành ngôn ngữ anh. Đã có 6 tháng kinh nghiệm trợ giảng cho lớp học giao tiếp, kinh nghiệm dẫn tour cho người nước ngoài, dạy tiếng việt cho người nước ngoài. Tiếng Anh giao tiếp khá. Hiện tại là coach dạy tiếng anh giao tiếp tại trung tâm anh ngữ Aten, và gia sư tiếng anh giao tiếp 1:1 cho 1 bạn học viên ở trung tâm
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv4.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Hương Giang</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Chào mọi người, mình là Hương Giang, hiện đang là sinh viên năm nhất Chương trình tiên tiến Kinh tế đối ngoại ( Chương trình giảng dạy bằng Tiếng Anh) Trường Đại học Ngoại Thương.<br>
-							Ưu điểm:tự tin. hoạt bát, đam mê công viecj, trình độ chuyên môn ổn, tài liệu phong phú giúp học sinh tham khảo.<br>
-							Phong cách dạy : Nhiệt tình, thân thiện, sẵn sàng giải đáp mọi thắc mắc của học sinh.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv5.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Mỹ Duyên</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Chào trung tâm và phụ huynh,<br>
-							Tôi đã tốt nghiệp đại học Ngoại thương khoa Kinh tế quốc tế. Điểm thì đại học năm 2015 là 25 điểm. Từ lớp 12 đến hết 4 năm đại học đều đi gia sư môn toán và tiếng anh cho các bạn học sinh cấp 2 và cấp 3. Đạt giải 3 môn tiếng Anh cấp huyện lớp 8, giải nhì môn tiếng Anh cấp tỉnh lớp 9. Tham gia học đội tuyển thi HSG toán và tiếng Anh trong cả cấp 2 và cấp 3. Yêu thích dạy toán cấp 2.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv6.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Nguyễn Song Thương</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Chào mọi người,<br>
-							Em tên là Nguyễn Song Thương, hiện đang là sinh viên năm nhất khoa Pháp luật kinh tế của trường đại học Luật Hà Nội.<br>
-							Em từng là học sinh chuyên anh của trường THPT chuyên tỉnh Lào Cai<br>
-							Em thi THPT quốc gia với tổng điểm là 24,5 khối D01<br>
-							Em thấy bản thân mình là người năng động, tự tin, nhiệt tình, sáng tạo và có khả năng lắng nghe, truyền đạt tốt, và luôn muốn trau dồi thêm kiến thức, kinh nghiệm cho bản thân.<br>
-							Bên cạnh đó em là một người kiên nhẫn, nghiêm túc, có trách nhiệm với công việc của mình, em sẽ cố gắng hết sức để làm thật tốt công việc giảng dạy của mình.<br>
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv7.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Phan Thị Bảo Yến</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Xin chào gia đình phụ huynh và các em học sinh. Tôi tên là Phan Thị Bảo Yến, hiện đang theo học ngành Tài chính Quốc tế của Học viện Tài Chính. Hiện nay tôi đang tìm kiếm công việc gia sư cho các em học sinh đang cần cải thiện môn Tiếng Anh. Để có được một kiến thức Tiếng Anh khá vững như ngày hôm nay tôi đã phải học tập và tìm tòi rất nhiều. Và tôi biết được rằng để có được tôi như hôm nay là nhờ cô giáo gia sư ở quê tôi. Vì vậy tôi cũng mong muốn được truyền đạt lại những gì tôi được học cho các em học sinh sau này tôi có cơ hội dạy.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv8.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Nguyễn Thị Thúy</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Mình là sinh viên của Khoa Du lịch trường ĐH Khoa học xã hội và Nhân Văn với số điểm đầu vào 23,65 khối D1 (Toán , Văn , Anh) . Tuy không phải một con số ấn tượng nhưng nó là cả một sự nỗ lực to lớn và mình thực sự hài lòng với điểm số môn Anh Văn là 9đ .<br>
-							Mình là một người tận tình và nhiệt huyết , rất hoà đồng và khá sôi động ; đặc biệt rất vui khi được truyền tải những kiến thức cá nhân cho những người chưa biết . Tuy chưa có nhiều kinh nghiệm gia sư nhưng mình biết cách dạy sao cho dễ tiếp thu nhất có thể .Bạn trao cho mình niềm tin , mình trao cho bạn chất lượng bởi với mình , đã học là phải tiến bộ . Vậy nên sự nỗ lực bền bỉ là không thể thiếu !!!
-						</div>
-					</div>
-				</div>
-
-				<div class="item">
-					<img class="item__img" src="css/img/gv9.jpg">
-					<div class="item__details">
-						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Đỗ Kim Thanh</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
-						</div>
-						<div class="item__descriptions">
-							Em tên là Đỗ Thị Kim Thanh, hiện tại là sinh viên năm 2 đại học Ngoại Thương, chuyên ngành kinh tế đối ngoại.<br>
-							Em có niềm yêu thích với môn tiếng Anh và mong muốn được chia sẻ tình yêu đó với những ai đang cần vì tiếng Anh là một ngôn ngữ sinh động chứ không phải một môn học nhàm chán.<br>
-							Em từng đạt giải ba HSG tiếng Anh thành phố Hải Phòng năm lớp 9 và giải Nhì HSG tiếng Anh cấp thành phố năm lớp 12.<br>
-							Tổng điểm thi THPT QG năm 2018 của em là 26.5 (chưa cộng điểm vùng) cụ thể: toán 8.2, văn 8.5, tiếng Anh:9.8<br>
-							Thành tích của em vô cùng khiêm tốn và ít ỏi và em cũng chưa có nhiều kinh nghiệm dạy học nhưng em vẫn trau dồi kiến thức bản thân từng ngày. Em sẽ cố gắng hết sức để học sinh của mình đạt kết quả tốt nhất và cảm thấy xứng đáng với thời gian công sức bỏ ra.
+							Loading
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img class="item__img" src="css/img/gv10.jpg">
+					<img class="item__img" src="css/img/loading.jpg">
 					<div class="item__details">
 						<div class="item__details--float">
-							<div class="item__name"><div class="item__status item__status--online"></div> <span>Trần Thị Phương Lan</span></div>
-							<div class="item__records">2 <i class="fas fa-headset"></i></i></div>
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
-							Em là sinh viên năm 4 vừa mới tốt nghiệp Đại học Ngoại Thương Hà Nội. Năm cấp 3 em học tại trường THPT Chuyên Bắc Giang, lớp chuyên Văn, khối D và đã thi đỗ Đại học với tổng số điểm 26 điểm (9 điểm Toán, 8 điểm Văn, 9 điểm Anh). Năm nhất đại học em đã thi được bằng TOEIC với số điểm gần 800, đồng thời tham gia các câu lạc bộ bên trong và ngoài trường đại học (trong đó có dự án của AIESEC, Viet Camp Phil, Quest,...). Điểm thi tại trường các môn Tiếng Anh cơ sở và Tiếng Anh chuyên ngành em đều đạt điểm giỏi (>9.0). Trong suốt 3 năm đầu Đại học, em đã làm gia sư cho 8 học sinh (trong đó có một chị sinh viên học Tiếng Anh giao tiếp hiện nay đã đi du học, một chị đã đi làm học thi TOEIC, một bạn học sinh lớp 12 đỗ Kinh tế Quốc Dân năm 2019 với số điểm Tiếng Anh là 9 điểm, 2 bạn nhỏ lớp 4 và lớp 5 học tại trường Quốc tế,...). Hiện tại em có bằng IELTS 7.5 và kỹ năng em tự tin nhất là Speaking. Do đó em mong muốn có cơ hội được dạy IELTS cho các bạn khác ở mọi lứa tuổi hoặc dạy các bạn học sinh ôn thi Đại học. Em rất tự tin vào khả năng Tiếng Anh của mình và phương pháp dạy dễ hiểu, nắm bắt được tâm lý học sinh. Ngoài ra em còn biết Tiếng Trung trình độ trung cấp nên đối với các bạn có mong muốn học hỏi thêm về Tiếng Trung em đều rất sẵn lòng chia sẻ kinh nghiệm học tập.
+							Loading
 						</div>
 					</div>
 				</div>
+				<div class="item">
+					<img class="item__img" src="css/img/loading.jpg">
+					<div class="item__details">
+						<div class="item__details--float">
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+						</div>
+						<div class="item__descriptions">
+							Loading
+						</div>
+					</div>
+				</div>
+				
+				
 
 			</div>
 		</div>
