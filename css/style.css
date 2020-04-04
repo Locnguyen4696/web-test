@@ -49,23 +49,23 @@ table {
 	.content{
 		display: grid;
     	grid-gap: 5px;
-    	grid-template-columns: repeat(2, minmax(384px, 1fr));
+    	grid-template-columns: repeat(2, 1fr);
 	}
 }
 @media (min-width: 1200px){
 	.content{
 		display: grid;
     	grid-gap: 5px;
-    	grid-template-columns: repeat(3, minmax(384px, 1fr));
+    	grid-template-columns: repeat(3, 1fr);
 	}
 }
 .wrapper{
-	width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 }
 .item{
 	display: grid;
-	grid-template-columns: minmax(0, 100px) minmax(0, 568px);
+	grid-template-columns: minmax(0, 20%) minmax(0, 80%);
 	padding: 5px;
 	background-color: #f3f2ee;
 }
@@ -88,14 +88,14 @@ table {
 	background-color: #00FF00;
 }
 .item__img{
-	max-width: 100px;
+	max-width: 100%;
 }
 .item__name{
 	font-weight: bold;
 }
 .item__descriptions{
 	display: block;
-	max-width: 568px;
+	max-width: 90%;
 	padding: 5px 0px; 
 	text-indent: 10px;
 	line-height: 1rem;
