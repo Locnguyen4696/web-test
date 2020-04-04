@@ -7,8 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		
+	<script type="text/javascript">	
 		var request = new XMLHttpRequest(); 
 		request.open('GET', 'https://5e85b87c44467600161c669f.mockapi.io/api/teachers?fbclid=IwAR1D5EWSeL7L8CPQZNAa9xaqVsmjOVMlVRlgms3ySIcB7z6fI-dfmuUHBiQ', true); 
 		request.onload = function () {
@@ -23,7 +22,7 @@
 				}else{
 					var online="#00FF00";
 				}
-				$($('.item__records')[i]).text(count)
+				$($('.item__records span')[i]).text(count)
 				$($('.item__descriptions')[i]).text(des)
 				$($('.item__name span')[i]).text(name)
 				$($('.item__img')[i]).attr("src",img)
@@ -31,13 +30,8 @@
 
 			}
 		};
-
 		request.send();	
-	
-		</script>
-
-					
-			
+		</script>	
 	</head>
 	<body>
 		<div class="wrapper">
@@ -47,7 +41,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -59,7 +53,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -71,7 +65,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -83,7 +77,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -95,7 +89,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -107,7 +101,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -119,7 +113,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -131,7 +125,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -143,7 +137,7 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
@@ -155,19 +149,27 @@
 					<div class="item__details">
 						<div class="item__details--float">
 							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
-							<div class="item__records">Loading <i class="fas fa-headset"></i></i></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
 						</div>
 						<div class="item__descriptions">
 							Loading
 						</div>
 					</div>
 				</div>
-				
-				
-
+				<div class="item">
+					<img class="item__img" src="css/img/loading.jpg">
+					<div class="item__details">
+						<div class="item__details--float">
+							<div class="item__name"><div class="item__status item__status--online"></div> <span>Loading</span></div>
+							<div class="item__records"><span>Loading</span> <i class="fas fa-headset"></i></i></div>
+						</div>
+						<div class="item__descriptions">
+							Loading
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>
